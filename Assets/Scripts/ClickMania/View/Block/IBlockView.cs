@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace ClickMania.View.Block
 {
@@ -7,12 +9,14 @@ namespace ClickMania.View.Block
         int BlockID { get; }
         Vector2 Position { get; }
         
-        void Move(float xCoordinate);
-        void Fall(float yCoordinate);
         void SetColor(Color color);
         void SetPosition(Vector2 position);
-        void Show();
-        void Hide();
-        void Destroy();
+        void DestroyImmediate();
+        
+        UniTask Move(float xCoordinate);
+        UniTask Fall(float yCoordinate);
+        UniTask Show();
+        UniTask Hide();
+        UniTask Destroy();
     }
 }

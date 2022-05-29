@@ -1,29 +1,20 @@
-﻿using System.Threading.Tasks;
-using ClickMania.Core.Areas;
+﻿using System.Collections.Generic;
+using ClickMania.View.Block;
+using Cysharp.Threading.Tasks;
 
 namespace ClickMania.View.Animations
 {
-    public class DestroyAnimation : IAnimation
+    public class DestroyAnimation : IAnimation<IBlockView[]>
     {
-        private readonly IArea _area;
-
-        public DestroyAnimation(IArea area)
+        public UniTask Start(IBlockView[] blockViews)
         {
-            _area = area;
-        }
-
-        public void Start()
-        {
-            for (int i = 0; i < _area.ColumnCount; i++)
-            for (int j = 0; j < _area.RowCount; j++)
+            var destroyAnimations = new List<UniTask>();
+            for (int i = 0; i < blockViews.Length; i++)
             {
-                
+                destroyAnimations.Add(blockViews[i].Destroy());
             }
-        }
 
-        public Task WaitForComplection()
-        {
-            throw new System.NotImplementedException();
+            return UniTask.WhenAll(destroyAnimations);
         }
     }
 }

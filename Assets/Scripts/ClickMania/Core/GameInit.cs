@@ -12,6 +12,7 @@ using ClickMania.Core.Features.CleanEmptyColumns;
 using ClickMania.Core.Game;
 using ClickMania.View;
 using ClickMania.View.Block;
+using ClickMania.View.Data;
 using ClickMania.View.Position;
 using ClickMania.View.Spawn;
 using SDK.CameraComponents;
@@ -51,7 +52,8 @@ namespace ClickMania.Core
             var turn = new TurnEntity(blocksFallEntity, emptyColumnsCleaner, endGameChecker, blockGroupUpdater, blockFinder);
             var blockViewSpawner = new BlockViewSpawner(_blockViewPrefab, turn);
             _gameSession = new GameSessionEntity(game, token.Token);
-            _gameView = new GameView(area, blockViewSpawner, positionConverter, blockFinder, _colorPalette);
+            var viewDataUpdater = new ViewDataUpdater(area, blockFinder, positionConverter);
+            _gameView = new GameView(area, blockViewSpawner, positionConverter, blockFinder, _colorPalette, viewDataUpdater);
 
             game.OnStart += _gameView.SpawnBlockViews;
             turn.OnTurn += _gameView.Update;

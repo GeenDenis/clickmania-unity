@@ -1,10 +1,14 @@
-﻿using System.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 
 namespace ClickMania.View.Animations
 {
     public interface IAnimation
     {
-        void Start();
-        Task WaitForComplection();
+        UniTask Start();
+    }
+    
+    public interface IAnimation<T>
+    {
+        UniTask Start(T data);
     }
 }

@@ -23,17 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cea0faa8-5e4f-47af-8b25-2a00c0505d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Areas/Search.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Features.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Features/BlockFalling.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.clickmania-unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.clickmania-unity/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.clickmania-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.clickmania-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/GameInit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/GameInit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Animations/DestroyAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Animations/DestroyAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Animations/IAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Animations/IAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Block/BlockView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Block/BlockView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Block/IBlockView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Block/IBlockView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/GameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/GameView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +44,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/dc/eb74326a/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/b7/362fda5f/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3D71F8AC-41C5-48F1-BE37-6E0ECB1F1D59/02/1f59dabd/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/e7/26f4aa4a/SpriteRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3675EBEC-548A-4661-89B9-45E2BA3BBCB2/e5/25f7f284/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42A5878C-E129-4030-83AC-CCF18E43363F/19/3270a4c0/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/384B0A6F-9E21-4ADB-AFB7-8CA2EF5A45BC/30/968ab528/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/86/a45b4fc2/Renderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Game/TurnEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/384B0A6F-9E21-4ADB-AFB7-8CA2EF5A45BC/8a/b18ed257/Array.cs" root0="SKIP_HIGHLIGHTING" />
@@ -58,9 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Blocks/BlockCreation/BlockSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Areas/IArea.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Areas/BlocksArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Areas/IAreaParameters.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Game/IEndGameConditions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Game/IGame.cs" />
@@ -96,12 +93,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Blocks/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Blocks/BlockCreation/BlockCreator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Block/IBlockView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Block/BlockView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Spawn/BlockViewSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/GameInit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Areas/Search/BlockFinder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/Game/TurnEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/GameView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Animations/MoveAnimations/IAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Animators/MoveAnimations/IAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Animators/MoveAnimations/BlendableMoveAnimations/BlendableScaleAnimator.cs" />
@@ -109,6 +103,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Animations/IAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Animations/FallAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Animations/DestroyAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Data/IViewData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Data/ViewData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/GameView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/Core/GameInit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Data/ViewDataUpdater.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ClickMania/View/Block/BlockView.cs" />
       </list>
     </option>
   </component>
@@ -135,10 +135,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="4088">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="4088" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -215,42 +215,42 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="472" height="464" key="DebuggerActiveHint/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653222509346" />
-    <state width="1876" height="373" key="GridCell.Tab.0.bottom" timestamp="1653695442761">
+    <state width="1876" height="373" key="GridCell.Tab.0.bottom" timestamp="1653865236291">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1876" height="373" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1653149659418" />
-    <state width="1876" height="373" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653695442761" />
-    <state width="1876" height="373" key="GridCell.Tab.0.center" timestamp="1653695442761">
+    <state width="1876" height="373" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653865236291" />
+    <state width="1876" height="373" key="GridCell.Tab.0.center" timestamp="1653865236291">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1876" height="373" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1653149659418" />
-    <state width="1876" height="373" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653695442761" />
-    <state width="1876" height="373" key="GridCell.Tab.0.left" timestamp="1653695442761">
+    <state width="1876" height="373" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653865236291" />
+    <state width="1876" height="373" key="GridCell.Tab.0.left" timestamp="1653865236291">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1876" height="373" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1653149659417" />
-    <state width="1876" height="373" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653695442761" />
-    <state width="1876" height="373" key="GridCell.Tab.0.right" timestamp="1653695442761">
+    <state width="1876" height="373" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653865236291" />
+    <state width="1876" height="373" key="GridCell.Tab.0.right" timestamp="1653865236291">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1876" height="373" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1653149659418" />
-    <state width="1876" height="373" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653695442761" />
-    <state width="1876" height="373" key="GridCell.Tab.1.bottom" timestamp="1653695442762">
+    <state width="1876" height="373" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653865236291" />
+    <state width="1876" height="373" key="GridCell.Tab.1.bottom" timestamp="1653865242667">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="373" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653695442762" />
-    <state width="1876" height="373" key="GridCell.Tab.1.center" timestamp="1653695442762">
+    <state width="1876" height="373" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653865242667" />
+    <state width="1876" height="373" key="GridCell.Tab.1.center" timestamp="1653865242667">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="373" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653695442762" />
-    <state width="1876" height="373" key="GridCell.Tab.1.left" timestamp="1653695442762">
+    <state width="1876" height="373" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653865242667" />
+    <state width="1876" height="373" key="GridCell.Tab.1.left" timestamp="1653865242667">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="373" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653695442762" />
-    <state width="1876" height="373" key="GridCell.Tab.1.right" timestamp="1653695442762">
+    <state width="1876" height="373" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653865242667" />
+    <state width="1876" height="373" key="GridCell.Tab.1.right" timestamp="1653865242667">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="373" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653695442762" />
+    <state width="1876" height="373" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653865242667" />
     <state width="1876" height="373" key="GridCell.Tab.2.bottom" timestamp="1653695442762">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
@@ -297,10 +297,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2536" y="237" key="run.anything.popup/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1652086034159" />
-    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1653692747965">
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1653865375419">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1650523654105" />
-    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653692747965" />
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1653865375419" />
   </component>
 </project>

@@ -195,6 +195,10 @@
                 <e p="BlockView.cs" t="Include" />
                 <e p="IBlockView.cs" t="Include" />
               </e>
+              <e p="Data" t="Include">
+                <e p="IViewData.cs" t="Include" />
+                <e p="ViewDataUpdater.cs" t="Include" />
+              </e>
               <e p="GameView.cs" t="Include" />
               <e p="IGameView.cs" t="Include" />
               <e p="Position" t="Include">
