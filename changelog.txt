@@ -1,0 +1,7 @@
+#changelog
+
+##Update - 0.005
+-refactor view
+-add destroy animator
+-add fall animator
+-add move animator
