@@ -46,14 +46,14 @@ namespace ClickMania.View.Block
             BlockID = id;
         }
 
-        public UniTask Move(float xCoordinate)
+        public Tween Move(float xCoordinate)
         {
             var toPosition = Position;
             toPosition.x = xCoordinate;
             return AnimateMove(toPosition, _moveAnimator);
         }
 
-        public UniTask Fall(float yCoordinate)
+        public Tween Fall(float yCoordinate)
         {
             var toPosition = Position;
             toPosition.y = yCoordinate;
@@ -76,47 +76,32 @@ namespace ClickMania.View.Block
             _transform.localScale = scale;
         }
 
-        public UniTask Hide()
+        public Tween Hide()
         {
-            if (_isHide) return UniTask.CompletedTask;
-            var tween = _hideAnimator.StartAnimation(_transform, -Vector3.one);
-            _isHide = true;
-            return tween.AsyncWaitForCompletion().AsUniTask();
-        }
-
-        public UniTask Show()
-        {
-            if (_isHide == false) return UniTask.CompletedTask;
-            var tween = _showAnimator.StartAnimation(_transform, Vector3.one);
-            _isHide = false;
-            return tween.AsyncWaitForCompletion().AsUniTask();
-        }
-
-        public UniTask Destroy()
-        {
-            var task = Hide();
+            if (_isHide) return default;
+            _isHide = true; 
             _input.SetActiveInput(false);
-            DestroyOnCompleteTask(task);
-            return task;
+            return _hideAnimator.StartAnimation(_transform, -Vector3.one);
         }
 
-        public void DestroyImmediate()
+        public Tween Show()
+        {
+            if (_isHide == false) return default;
+            _isHide = false;
+            _input.SetActiveInput(true);
+            return _showAnimator.StartAnimation(_transform, Vector3.one);
+        }
+
+        public void Destroy()
         {
             Destroy(gameObject);
         }
         
-        private UniTask AnimateMove(Vector2 toPosition, BlendableTransformAnimator animator)
+        private Tween AnimateMove(Vector2 toPosition, BlendableTransformAnimator animator)
         {
             var moveVector = toPosition - Position;
-            var tween = animator.StartAnimation(_transform, moveVector);
             Position = toPosition;
-            return tween.AsyncWaitForCompletion().AsUniTask();
-        }
-
-        private async void DestroyOnCompleteTask(UniTask task)
-        {
-            await task;
-            Destroy(gameObject);
+            return animator.StartAnimation(_transform, moveVector);
         }
     }
 }

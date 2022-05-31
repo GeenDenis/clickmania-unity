@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Cysharp.Threading.Tasks;
+﻿using DG.Tweening;
 using UnityEngine;
 
 namespace ClickMania.View.Block
@@ -11,12 +10,11 @@ namespace ClickMania.View.Block
         
         void SetColor(Color color);
         void SetPosition(Vector2 position);
-        void DestroyImmediate();
         
-        UniTask Move(float xCoordinate);
-        UniTask Fall(float yCoordinate);
-        UniTask Show();
-        UniTask Hide();
-        UniTask Destroy();
+        Tween Move(float xCoordinate);
+        Tween Fall(float yCoordinate);
+        Tween Show();
+        Tween Hide();
+        void Destroy();
     }
 }

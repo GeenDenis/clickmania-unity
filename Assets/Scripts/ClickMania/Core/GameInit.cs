@@ -11,6 +11,7 @@ using ClickMania.Core.Features.BlockFalling;
 using ClickMania.Core.Features.CleanEmptyColumns;
 using ClickMania.Core.Game;
 using ClickMania.View;
+using ClickMania.View.Animations;
 using ClickMania.View.Block;
 using ClickMania.View.Data;
 using ClickMania.View.Position;
@@ -33,8 +34,7 @@ namespace ClickMania.Core
         private void Awake()
         {
             var token = new CancellationTokenSource();
-            
-            var cameraWidthRegulator = new CameraWidthRegulator(_camera);
+
 
             var area = new BlocksArea();
             var blockMover = new BlockMover(area);
@@ -46,14 +46,36 @@ namespace ClickMania.Core
             var blockFinder = new BlockFinder(area);
             var blockGroupFinder = new BlockGroupFinder(area);
             var blockGroupUpdater = new BlockGroupUpdater(area, blockGroupFinder);
-            var positionConverter = new PositionConverter(area);
-            var game = new GameEntity(area, blockSpawner, blockGroupUpdater, cameraWidthRegulator);
+
+            
+            var cameraWidthRegulator = new CameraWidthRegulator(_camera);
+            var game = new GameEntity(
+                area, 
+                blockSpawner, 
+                blockGroupUpdater, 
+                cameraWidthRegulator);
             var endGameChecker = new EndGameConditions(area, game);
-            var turn = new TurnEntity(blocksFallEntity, emptyColumnsCleaner, endGameChecker, blockGroupUpdater, blockFinder);
+            var turn = new TurnEntity(
+                blocksFallEntity, 
+                emptyColumnsCleaner, 
+                endGameChecker, 
+                blockGroupUpdater, 
+                blockFinder);
+            var positionConverter = new PositionConverter(area);
             var blockViewSpawner = new BlockViewSpawner(_blockViewPrefab, turn);
+            var destroyAnimation = new DestroyAnimation();
+            var fallAnimation = new FallAnimation(area, positionConverter);
+            var moveAnimation = new DestroyAnimation();
+            _gameView = new GameView(
+                area, 
+                blockViewSpawner, 
+                positionConverter, 
+                blockFinder, 
+                _colorPalette,
+                destroyAnimation,
+                moveAnimation,
+                fallAnimation);
             _gameSession = new GameSessionEntity(game, token.Token);
-            var viewDataUpdater = new ViewDataUpdater(area, blockFinder, positionConverter);
-            _gameView = new GameView(area, blockViewSpawner, positionConverter, blockFinder, _colorPalette, viewDataUpdater);
 
             game.OnStart += _gameView.SpawnBlockViews;
             turn.OnTurn += _gameView.Update;
