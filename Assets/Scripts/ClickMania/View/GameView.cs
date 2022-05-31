@@ -58,7 +58,7 @@ namespace ClickMania.View
             
             await _destroyAnimation.Start(viewsForDestroy.ToArray()).AsTask();
             _fallAnimation.Start(_blockViews.ToArray());
-            //_moveAnimation.Start(_blockViews.ToArray());
+            _moveAnimation.Start(_blockViews.ToArray());
         }
         
         public void Clear()
@@ -74,7 +74,7 @@ namespace ClickMania.View
             var viewsForDestroy = new List<IBlockView>();
             for (int i = 0; i < _blockViews.Count; i++)
             {
-                if(_blockFinder.TryFindBlockInArea(_blockViews[i].BlockID, out var block)) continue;
+                if(_blockFinder.TryFindBlockInArea(_blockViews[i].ID, out _)) continue;
                 viewsForDestroy.Add(_blockViews[i]);
             }
             return viewsForDestroy;

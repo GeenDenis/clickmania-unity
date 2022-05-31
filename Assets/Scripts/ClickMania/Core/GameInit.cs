@@ -65,7 +65,7 @@ namespace ClickMania.Core
             var blockViewSpawner = new BlockViewSpawner(_blockViewPrefab, turn);
             var destroyAnimation = new DestroyAnimation();
             var fallAnimation = new FallAnimation(area, positionConverter);
-            var moveAnimation = new DestroyAnimation();
+            var moveAnimation = new MoveAnimation(area, positionConverter);
             _gameView = new GameView(
                 area, 
                 blockViewSpawner, 

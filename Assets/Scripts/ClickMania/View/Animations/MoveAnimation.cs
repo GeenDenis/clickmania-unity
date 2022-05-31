@@ -6,18 +6,17 @@ using ClickMania.View.Block;
 using ClickMania.View.Position;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using UnityEngine.Playables;
 
 namespace ClickMania.View.Animations
 {
-    public class FallAnimation : IAnimation<IBlockView[]>
+    public class MoveAnimation : IAnimation<IBlockView[]>
     {
         private readonly IArea _area;
         private readonly IConvertPosition _positionConverter;
 
-        private float betweenFallDelay = 0.05f;
-        
-        public FallAnimation(IArea area, IConvertPosition positionConverter)
+        private float betweenMoveDelay = 0.05f;
+
+        public MoveAnimation(IArea area, IConvertPosition positionConverter)
         {
             _area = area;
             _positionConverter = positionConverter;
@@ -25,28 +24,30 @@ namespace ClickMania.View.Animations
 
         public UniTask Start(IBlockView[] data)
         {
-            var fallAnimations = new List<UniTask>();
-            
+            var moveAnimations = new List<UniTask>();
+
+            var moveDelay = 0f;
             for (int columnIndex = 0; columnIndex < _area.ColumnCount; columnIndex++)
             {
-                var fallDelay = 0f;
+                bool columnIsAnimated = false;
                 for (int rowIndex = 0; rowIndex < _area.RowCount; rowIndex++)
                 {
                     var block = _area.Cells[rowIndex, columnIndex];
-                    
-                    if(block is null) continue;
-                    
-                    if(TryFindView(data, block.ID, out var blockView) == false) continue;
-                    
-                    if(TryAnimateBlock(block, blockView, out Tween animation) == false) continue;
-                    
-                    animation.SetDelay(fallDelay);
-                    fallAnimations.Add(animation.AsyncWaitForCompletion().AsUniTask());
-                    fallDelay += betweenFallDelay;
+
+                    if (block is null) continue;
+
+                    if (TryFindView(data, block.ID, out var blockView) == false) continue;
+
+                    if (TryAnimateBlock(block, blockView, out Tween animation) == false) continue;
+
+                    animation.SetDelay(moveDelay);
+                    moveAnimations.Add(animation.AsyncWaitForCompletion().AsUniTask());
+                    columnIsAnimated = true;
                 }
+                moveDelay += columnIsAnimated ? betweenMoveDelay : 0f;
             }
 
-            return UniTask.WhenAll(fallAnimations);
+            return UniTask.WhenAll(moveAnimations);
         }
 
         private bool TryAnimateBlock(IBlock block, IBlockView view, out Tween animation)
@@ -54,8 +55,8 @@ namespace ClickMania.View.Animations
             animation = default;
             if (block.ID != view.ID) return false;
             var blockPos = _positionConverter.ToVector2(block.Row, block.Column);
-            if (Math.Abs(view.Position.y - blockPos.y) < 0.05f) return false;
-            animation = view.Fall(blockPos.y);
+            if (Math.Abs(view.Position.x - blockPos.x) < 0.05f) return false;
+            animation = view.Move(blockPos.x);
             return true;
         }
 
@@ -64,10 +65,11 @@ namespace ClickMania.View.Animations
             view = default;
             for (int i = 0; i < views.Length; i++)
             {
-                if(views[i].ID != id) continue;
+                if (views[i].ID != id) continue;
                 view = views[i];
                 return true;
             }
+
             return false;
         }
     }

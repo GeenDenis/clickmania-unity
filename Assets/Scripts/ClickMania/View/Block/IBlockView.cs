@@ -5,7 +5,7 @@ namespace ClickMania.View.Block
 {
     public interface IBlockView
     {
-        int BlockID { get; }
+        int ID { get; }
         Vector2 Position { get; }
         
         void SetColor(Color color);

@@ -20,7 +20,7 @@ namespace ClickMania.View.Block
         private Transform _transform;
         private TurnEntity _turnEntity;
 
-        public int BlockID { get; private set; }
+        public int ID { get; private set; }
         public Vector2 Position { get; private set; }
 
         public void Init(TurnEntity turnEntity)
@@ -28,7 +28,7 @@ namespace ClickMania.View.Block
             _turnEntity = turnEntity;
             _transform = GetComponent<Transform>();
 
-            BlockID = -1;
+            ID = -1;
             Position = _transform.position;
             _transform.localScale = _isHide ? Vector3.zero : Vector3.one;
 
@@ -37,13 +37,13 @@ namespace ClickMania.View.Block
 
         private void DoTurn()
         {
-            if(BlockID == -1) return;
-            _turnEntity.Execute(BlockID);
+            if(ID == -1) return;
+            _turnEntity.Execute(ID);
         }
 
         public void SetBlockID(int id)
         {
-            BlockID = id;
+            ID = id;
         }
 
         public Tween Move(float xCoordinate)

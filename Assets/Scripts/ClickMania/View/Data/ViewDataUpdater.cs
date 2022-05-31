@@ -42,7 +42,7 @@ namespace ClickMania.View.Data
             {
                 var blockView = blockViews[i];
                 
-                if (_blockFinder.TryFindBlockInArea(blockView.BlockID, out var block) == false)
+                if (_blockFinder.TryFindBlockInArea(blockView.ID, out var block) == false)
                 {
                     _blockViews.Remove(blockView);
                     viewsForDestroy.Add(blockView);
