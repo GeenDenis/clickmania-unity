@@ -5,3 +5,8 @@
 -add destroy animator
 -add fall animator
 -add move animator
+
+##Update - 0.008
+-update UI
+-update BlockMoveAnimation
+-add score logic
