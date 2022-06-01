@@ -1,6 +1,5 @@
 ﻿using Animators.MoveAnimations.BlendableMoveAnimations;
 using ClickMania.Core.Game;
-using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using SDK.ColliderClickDetection;
 using UnityEngine;

@@ -6,7 +6,6 @@ using ClickMania.View.Block;
 using ClickMania.View.Position;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using UnityEngine.Playables;
 
 namespace ClickMania.View.Animations
 {

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MoveAnimator
   m_EditorClassIdentifier: 
   duration: 0.4
-  type: 10
+  type: 30

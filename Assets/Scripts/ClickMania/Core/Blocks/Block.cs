@@ -1,6 +1,5 @@
 ﻿using ClickMania.Core.Blocks.Destroy;
 using ClickMania.Core.Blocks.Move;
-using ClickMania.View.Block;
 
 namespace ClickMania.Core.Blocks
 {
