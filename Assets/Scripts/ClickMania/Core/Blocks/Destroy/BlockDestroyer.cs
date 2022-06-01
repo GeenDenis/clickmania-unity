@@ -1,12 +1,13 @@
-﻿using ClickMania.Core.Areas;
-using SDK.Debug;
+﻿using System;
+using ClickMania.Core.Areas;
+using ClickMania.Score;
 
 namespace ClickMania.Core.Blocks.Destroy
 {
     public class BlockDestroyer : IDestroyBlock
     {
         private readonly IAreaEditor _area;
-
+        
         public BlockDestroyer(IAreaEditor area)
         {
             _area = area;
@@ -16,8 +17,7 @@ namespace ClickMania.Core.Blocks.Destroy
         {
             if (_area.Cells[row, column] is null)
             {
-                CustomDebug.LogError($"Block at position [{row}, {column}] does not exist");
-                return;
+                throw new Exception($"Block at position [{row}, {column}] does not exist");
             }
             
             _area.SetBlock(row, column, null);

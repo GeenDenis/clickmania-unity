@@ -10,11 +10,12 @@ using ClickMania.Core.Blocks.Move;
 using ClickMania.Core.Features.BlockFalling;
 using ClickMania.Core.Features.CleanEmptyColumns;
 using ClickMania.Core.Game;
+using ClickMania.Score;
 using ClickMania.View;
 using ClickMania.View.Animations;
 using ClickMania.View.Block;
-using ClickMania.View.Data;
 using ClickMania.View.Position;
+using ClickMania.View.Score;
 using ClickMania.View.Spawn;
 using SDK.CameraComponents;
 using Sirenix.OdinInspector;
@@ -24,6 +25,10 @@ namespace ClickMania.Core
 {
     public class GameInit : MonoBehaviour
     {
+        [SerializeField] private ScoreView _scoreView; //TODO: отрефакторить UI
+        [SerializeField] private ScoreMultiplierView _scoreMultiplierView; //TODO: отрефакторить UI
+        [SerializeField] private GameObject _mainScreen; //TODO: отрефакторить UI
+        [SerializeField] private GameObject _gameScreen; //TODO: отрефакторить UI
         [SerializeField] private Camera _camera;
         [SerializeField] private BlockView _blockViewPrefab;
         [SerializeField] private ColorPalette _colorPalette;
@@ -35,6 +40,11 @@ namespace ClickMania.Core
         {
             var token = new CancellationTokenSource();
 
+            var scoreMultiplier = new ScoreMultiplier();
+            _scoreMultiplierView.Init(scoreMultiplier);
+            
+            var score = new ScoreCounter(scoreMultiplier, 3);
+            _scoreView.Init(score);
 
             var area = new BlocksArea();
             var blockMover = new BlockMover(area);
@@ -46,8 +56,6 @@ namespace ClickMania.Core
             var blockFinder = new BlockFinder(area);
             var blockGroupFinder = new BlockGroupFinder(area);
             var blockGroupUpdater = new BlockGroupUpdater(area, blockGroupFinder);
-
-            
             var cameraWidthRegulator = new CameraWidthRegulator(_camera);
             var game = new GameEntity(
                 area, 
@@ -60,7 +68,8 @@ namespace ClickMania.Core
                 emptyColumnsCleaner, 
                 endGameChecker, 
                 blockGroupUpdater, 
-                blockFinder);
+                blockFinder,
+                score);
             var positionConverter = new PositionConverter(area);
             var blockViewSpawner = new BlockViewSpawner(_blockViewPrefab, turn);
             var destroyAnimation = new DestroyAnimation();
@@ -75,15 +84,26 @@ namespace ClickMania.Core
                 destroyAnimation,
                 moveAnimation,
                 fallAnimation);
-            _gameSession = new GameSessionEntity(game, token.Token);
+            _gameSession = new GameSessionEntity(game, token.Token, score, scoreMultiplier, _mainScreen);
 
-            game.OnStart += _gameView.SpawnBlockViews;
-            turn.OnTurn += _gameView.Update;
+            game.OnStart += () =>
+            {
+                _gameView.SpawnBlockViews();
+                _scoreView.UpdateView();
+                _scoreMultiplierView.UpdateView();
+            };
+            turn.OnTurn += () =>
+            {
+                _gameView.Update();
+                _scoreView.UpdateView();
+            };
         }
 
         [Button]
         public void StartGame()
         {
+            _mainScreen.SetActive(false);
+            _gameScreen.SetActive(true);
             _gameView.Clear();
             _gameSession.StartSession();
         }
